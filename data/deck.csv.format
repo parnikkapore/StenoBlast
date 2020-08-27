@@ -1,0 +1,4 @@
+word - what Plover actually outputs
+word_shown - The word hown to the player*
+due - unix timestamp that the card is due
+box - Which box the card is in (int from 1-5) 
