@@ -8,10 +8,7 @@ String getCurS(){
   // return "cat";
   // return "supercalifragilisticexpialidocious";
   
-  String news = curs;
-  while (news == curs){
-    curR = randDeckItem();
-    news = curR.getString("word");
-  }
-  return news;
+  if(curDeck.size()==0) return "";
+  curR = randDeckItem();
+  return curR.getString("word");
 }

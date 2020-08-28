@@ -33,10 +33,17 @@ void nextWord_draw(){
   
   // Transition
   if(ratio >= 1.){
-    state = State.type;
-    tstart = millis();
-    txt = "";
-    curs = nxts;
+    if(nxts==""){ // End of session
+      state = State.splash;
+      txt = "";
+      sFinish.play();
+    }else{
+      state = State.type;
+      tstart = millis();
+      txt = "";
+      curs = nxts;
+    }
+    
     saveDeck();
   }
 }

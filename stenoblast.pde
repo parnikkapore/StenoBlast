@@ -1,22 +1,22 @@
 // StenoBlast
 
 // Library
-void setup(){
-    loadDeck();
-    
+void setup(){ 
     size(854,480);
     surface.setTitle("StenoBlast 0.0.1");
     surface.setResizable(true);
     //fullScreen();
     
+    loadDeck();
+    
     tstart = millis();
     state = State.splash;
-    curs = getCurS();
+    curs = "";
     sSuccess = new SoundFile(this, "Success.mp3");
     sFail = new SoundFile(this, "Failure.mp3");
     sFinish = new SoundFile(this, "Finish.mp3");
     
-    println(BOXES);
+    //println(BOXES);
 }
 
 void keyReleased(){

@@ -9,9 +9,20 @@ void splash_draw(){
 
 void splash_key(){
   if(key==' '){
-    state = State.type;
-    tstart = millis();
-    txt = "";
-    curs = getCurS();
+    initDeckDue();
+  }else if(key=='\\'){
+    initDeckAll();
+  }
+  
+  if(key==' ' || key=='\\'){
+    //println(curDeck.size());
+    if(curDeck.size()==0){ // No cards
+      sFail.play();
+    }else{
+      state = State.type;
+      tstart = millis();
+      txt = "";
+      curs = getCurS();
+    }
   }
 }
