@@ -37,6 +37,8 @@ void type_draw(){
       tstart = millis();
       sSuccess.play();
     }else if(timeLeft < 0){
+      updateCard(timeLeft);
+      
       state = State.type;
       tstart = millis();
       txt = "";
@@ -58,4 +60,17 @@ void updateCard(int timeLeft){
   if(timeLeft > CUTOFF_T - GOOD_T)    println(curs, "written great");
   else if(timeLeft > CUTOFF_T - OK_T) println(curs, "written well");
   else                                println(curs, "written poorly");
+  
+  int box = curR.getInt("box"); // Should default to 0 if it doesn't exist.
+  int due;
+  int now = int(System.currentTimeMillis()/(1000*24*60*60)); // Days since epoch
+  
+  if(timeLeft > CUTOFF_T - GOOD_T)    box+=2;
+  else if(timeLeft > CUTOFF_T - OK_T) box+=1;
+  else if(timeLeft < 0) box=0;
+  box = min(max(0, box), BOXES);
+  due = now + BOX_ITRVL[box];
+  
+  curR.setInt("box", box);
+  curR.setInt("due", due);
 }

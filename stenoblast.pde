@@ -15,6 +15,8 @@ void setup(){
     sSuccess = new SoundFile(this, "Success.mp3");
     sFail = new SoundFile(this, "Failure.mp3");
     sFinish = new SoundFile(this, "Finish.mp3");
+    
+    println(BOXES);
 }
 
 void keyReleased(){

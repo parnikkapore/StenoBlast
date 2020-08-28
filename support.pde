@@ -4,6 +4,9 @@ final int CUTOFF_T = 10000;
 final int OK_T = 3000;
 final int GOOD_T = 1000;
 
+final int[] BOX_ITRVL = {1,2,5,7,14}; // Box interval (time between reviews)
+final int BOXES = BOX_ITRVL.length - 1;
+
 // Globals
 
 import processing.sound.*;

@@ -37,6 +37,7 @@ void nextWord_draw(){
     tstart = millis();
     txt = "";
     curs = nxts;
+    saveDeck();
   }
 }
 
