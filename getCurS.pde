@@ -10,5 +10,5 @@ String getCurS(){
   
   if(curDeck.size()==0) return "";
   curR = randDeckItem();
-  return curR.getString("word");
+  return curR.getString("word").toLowerCase();
 }

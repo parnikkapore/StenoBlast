@@ -36,6 +36,7 @@ void nextWord_draw(){
     if(nxts==""){ // End of session
       state = State.splash;
       txt = "";
+      saveDeck();
       sFinish.play();
     }else{
       state = State.type;
@@ -43,8 +44,6 @@ void nextWord_draw(){
       txt = "";
       curs = nxts;
     }
-    
-    saveDeck();
   }
 }
 

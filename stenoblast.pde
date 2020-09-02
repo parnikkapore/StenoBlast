@@ -26,7 +26,7 @@ void keyReleased(){
       case nextWord: nextWord_key(); break;
       default:
     }
-  }
+}
 
 void draw(){
     switch(state){
